@@ -1,0 +1,48 @@
+meta:
+  protocol: AEHP-1.0
+  responder: Claude-Executor
+  received_at: "2026-03-02T06:00:00+01:00"
+  change_id: CHG-2026-073
+
+result:
+  validation: passed
+  execution: success
+  status: complete
+
+deliverables:
+  DEL-001:
+    status: partial
+    note: >
+      Repo created at github.com/rgeertsema/nightly-librarian (under rgeertsema, not
+      a new org — GitHub org creation requires manual browser action by Ralph).
+      Org 'nightly-librarian' pending manual creation at https://github.com/organizations/plan
+  DEL-002:
+    status: complete
+    note: >
+      Full codebase migrated — all src files, pipeline, storage adapters, scheduler,
+      review server, email service, types, prompts, scripts/supabase-init.sql, .env.example,
+      .gitignore, package.json, tsconfig.json. Tagged as v0.1.0-import intent.
+  DEL-003:
+    status: stub
+    note: >
+      vercel.json present. Setup wizard (WS-02) is the next workstream — requires
+      a separate Architect payload or explicit Ralph authorisation to self-execute.
+      Wizard UX, API routes, and pipeline lifecycle controls not yet built.
+  DEL-004:
+    status: partial
+    note: >
+      vercel.json created with routing config. README includes Deploy to Vercel button
+      and full operator guide. Full wizard deployment pending DEL-003.
+
+pending:
+  - "Manual: Ralph creates GitHub org 'nightly-librarian' at https://github.com/organizations/plan"
+  - "Manual: Transfer repo rgeertsema/nightly-librarian → nightly-librarian/nightly-librarian after org creation"
+  - "Next payload: WS-02 setup wizard (Vercel hosted, non-technical onboarding)"
+
+summary: >
+  CHG-2026-073 executed. Core codebase migrated to GitHub (14 source files, all scripts,
+  config templates). Repo live at github.com/rgeertsema/nightly-librarian with Deploy to
+  Vercel button in README. Setup wizard workstream (WS-02) is unstarted — requires next
+  AEHP payload from Architect to proceed per governance protocol.
+
+next_action: certification_pending_wizard
